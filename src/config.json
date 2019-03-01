@@ -1,0 +1,16 @@
+{
+  "COMMAND": {
+    "CREATE": "C",
+    "LINE": "L",
+    "RECTANGLE": "R",
+    "FILL": "B",
+    "QUIT": "Q",
+    "HELP": "--help"
+  },
+  "BORDER": {
+    "Y": "|",
+    "X": "-️",
+    "EMPTY": " "
+  },
+  "PRINT": "x"
+}
