@@ -1,6 +1,7 @@
 const readline = require('readline');
 const constants = require('./src/config.json');
 const create = require('./src/commands/create');
+const line = require('./src/commands/line');
 const utils = require('./src/utils');
 
 const rl = readline.createInterface({
@@ -20,7 +21,7 @@ function onCommandSubmit(command) {
       utils.printCanvas(canvas);
       break;
     case constants.COMMAND.LINE:
-      console.log('you typed line!');
+      line(canvas, input[1], input[2], input[3], input[4]);
       break;
     case constants.COMMAND.RECTANGLE:
       console.log('you typed rectangle!');

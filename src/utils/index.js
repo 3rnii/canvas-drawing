@@ -9,6 +9,11 @@ const printCanvas = canvas => canvas.forEach((row, index) => {
   }
 });
 
+const replaceAt = (string, index, replacement) =>  {
+  return string.substring(0, index) + replacement + string.substring(index + 1);
+};
+
 module.exports = {
-  printCanvas
+  printCanvas,
+  replaceAt
 };
