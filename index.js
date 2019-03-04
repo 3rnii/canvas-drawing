@@ -12,32 +12,43 @@ const rl = readline.createInterface({
 });
 
 let canvas = [];
+let hasCanvas = false;
 
 function onCommandSubmit(command) {
   const input = command.split(' ');
 
   switch (input[0]) {
     case constants.COMMAND.CREATE:
+      hasCanvas = true;
       canvas = create(parseInt(input[1]), parseInt(input[2]));
       utils.printCanvas(canvas);
       break;
     case constants.COMMAND.LINE:
-      line(canvas, parseInt(input[1]), parseInt(input[2]), parseInt(input[3]), parseInt(input[4]));
+      if (hasCanvas) {
+        line(canvas, parseInt(input[1]), parseInt(input[2]), parseInt(input[3]), parseInt(input[4]));
+      } else {
+        console.log('Please create a canvas first');
+      }
       break;
     case constants.COMMAND.RECTANGLE:
-      rectangle(canvas, parseInt(input[1]), parseInt(input[2]), parseInt(input[3]), parseInt(input[4]));
+      if (hasCanvas) {
+        rectangle(canvas, parseInt(input[1]), parseInt(input[2]), parseInt(input[3]), parseInt(input[4]));
+      } else {
+        console.log('Please create a canvas first');
+      }
       break;
     case constants.COMMAND.FILL:
-      fill(canvas, parseInt(input[1]), parseInt(input[2]), input[3]);
+      if (hasCanvas) {
+        fill(canvas, parseInt(input[1]), parseInt(input[2]), input[3]);
+      } else {
+        console.log('Please create a canvas first');
+      }
       break;
     case constants.COMMAND.QUIT:
-      console.log('you typed quit!');
+      console.log('Quitting...');
       return rl.close();
-    case constants.COMMAND.HELP:
-      console.log('you typed help!');
-      break;
     default:
-      console.error('this is on a command');
+      console.error('Invalid Command');
       break;
   }
 
