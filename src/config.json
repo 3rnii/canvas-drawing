@@ -10,7 +10,8 @@
   "BORDER": {
     "Y": "|",
     "X": "-",
-    "EMPTY": " "
+    "EMPTY": " ",
+    "PADDING": 2
   },
   "PRINT": "x"
 }

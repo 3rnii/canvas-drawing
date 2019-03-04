@@ -2,6 +2,8 @@ const readline = require('readline');
 const constants = require('./src/config.json');
 const create = require('./src/commands/create');
 const line = require('./src/commands/line');
+const rectangle = require('./src/commands/rectangle');
+const fill = require('./src/commands/fill');
 const utils = require('./src/utils');
 
 const rl = readline.createInterface({
@@ -13,7 +15,6 @@ let canvas = [];
 
 function onCommandSubmit(command) {
   const input = command.split(' ');
-  console.log(input, 'this is the input');
 
   switch (input[0]) {
     case constants.COMMAND.CREATE:
@@ -21,13 +22,13 @@ function onCommandSubmit(command) {
       utils.printCanvas(canvas);
       break;
     case constants.COMMAND.LINE:
-      line(canvas, input[1], input[2], input[3], input[4]);
+      line(canvas, parseInt(input[1]), parseInt(input[2]), parseInt(input[3]), parseInt(input[4]));
       break;
     case constants.COMMAND.RECTANGLE:
-      console.log('you typed rectangle!');
+      rectangle(canvas, parseInt(input[1]), parseInt(input[2]), parseInt(input[3]), parseInt(input[4]));
       break;
     case constants.COMMAND.FILL:
-      console.log('you typed fill!');
+      fill(canvas, parseInt(input[1]), parseInt(input[2]), input[3]);
       break;
     case constants.COMMAND.QUIT:
       console.log('you typed quit!');
