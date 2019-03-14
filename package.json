@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ernestchiu94/canvas-drawing.git"
+    "url": "git+https://github.com/3rnii/canvas-drawing.git"
   },
   "author": "Ernest Chiu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ernestchiu94/canvas-drawing/issues"
+    "url": "https://github.com/3rnii/canvas-drawing/issues"
   },
-  "homepage": "https://github.com/ernestchiu94/canvas-drawing#readme",
+  "homepage": "https://github.com/3rnii/canvas-drawing#readme",
   "dependencies": {
     "readline": "^1.3.0"
   }
